@@ -8,7 +8,7 @@
         <div class ="col text-center">
         <div class="card-title">
             <h3>{{item.name}}</h3>
-            <a (click)="searchHeroe(item.id)" class="btn btn-primary">Go somewhere</a>
+            <a (click)="searchHeroe(item.id)"[routerLink]="['/heroe-detail',item.id]" class="btn btn-primary">Go somewhere</a>
         </div>
         </div> 
         </div>
