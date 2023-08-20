@@ -1,14 +1,11 @@
-<div class="container">
+<div class="container-md">
   <br>
-<div class="jumbotron ">
-  <div class="container">
-    <h1 class="text-center display-4 text-white bg-dark">{{title}}</h1>
-  </div>
-  <nav class = "row text-center">
-    <a class = "col-xs-6 col-md-4 btn btn-outline-secondary" routerLink="/dashboard">Dashboard</a>
-    <a class = "col-xs-6 col-md-4 btn btn-outline-secondary" routerLink="/"></a>
-    <a class = "col-xs-6 col-md-4 btn btn-outline-secondary" routerLink="/lista-heroes">Lista de Heroes</a>
-  </nav>
-  </div> 
+  <div class="jumbotron ">
+    <div class="container">
+      <h1 class="text-center display-4 text-white bg-dark">{{title}}</h1>
+    </div>
+    <nav>
+      <a class = "col-xs-6 col-md-4 btn btn-outline-secondary" routerLink = "/dashboard">dashboard</a>
+    </nav>
   <router-outlet></router-outlet>
 </div>
