@@ -3,12 +3,22 @@
     <button class ="btn btn-primary" (click)=  "getData()">Detalles de Heroe</button>
     
     <div class = "row justify-content-around mb-3 p-5">
-    
+        <div>
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar héroe por nombre">
+            <button (click)="searchHero()">Buscar</button>
+            <div *ngIf="foundHero; else notFoundMessage">ID del héroe: {{ foundHero.id }}</div>
+
+            <ng-template #notFoundMessage>
+              <div>Héroe no encontrado</div>
+            </ng-template>
+          </div>
+        
     <div class="card mb-3 p-5" style="width: 18rem;"  *ngFor = "let item of heroes ">
+        
         <div class ="col text-center">
         <div class="card-title">
             <h3>{{item.name}}</h3>
-            <a (click)="searchHeroe(item.id)"[routerLink]="['/heroe-detail',item.id]" class="btn btn-primary">Go somewhere</a>
+            <a [routerLink]="['/heroe-detail',item.id]" class="btn btn-primary">Go somewhere</a>
         </div>
         </div> 
         </div>

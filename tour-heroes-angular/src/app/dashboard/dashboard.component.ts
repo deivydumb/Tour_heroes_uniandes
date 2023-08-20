@@ -8,6 +8,8 @@ import { HEROES } from '../mock-heroes';
 })
 export class DashboardComponent {
   heroes: Hero[] = [];
+  searchTerm: string = '';
+  foundHero: Hero | undefined;
 
   getData(): void{
     this.heroes = HEROES
@@ -15,10 +17,18 @@ export class DashboardComponent {
   }
 
 
-  searchHeroe(id: number){
-    console.log(id)
-     let data = this.heroes.find(heroe => heroe.id === id)
-     console.log(data)
-    return data
+
+  searchHero(){  
+    this.heroes = HEROES
+    const foundHero = this.heroes.find(hero =>
+      hero.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+
+    if (foundHero) {
+      this.foundHero = foundHero;
+    } else {
+      this.foundHero = {id:0,name:'',description:''};
+    }
+ 
   }
 }
